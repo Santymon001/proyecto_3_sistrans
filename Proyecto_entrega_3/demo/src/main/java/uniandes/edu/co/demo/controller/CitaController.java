@@ -144,5 +144,15 @@ public class CitaController {
             return new ResponseEntity<>("Error al agendar la cita: "+e.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
+    //-----------------------RFC2--------------------
+    @GetMapping("/top-servicios")
+    public ResponseEntity<List<Document>> obtenerTopServicios() {
+        try {
+            List<Document> resultado = citaRepositoryCustom.topServiciosMasSolicitados();
+            return ResponseEntity.ok(resultado);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        }
+    }
 }

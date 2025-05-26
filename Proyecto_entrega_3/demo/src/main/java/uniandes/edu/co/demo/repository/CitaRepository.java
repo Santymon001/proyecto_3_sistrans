@@ -11,7 +11,7 @@ import uniandes.edu.co.demo.modelo.Afiliado;
 import uniandes.edu.co.demo.modelo.Cita;
 import uniandes.edu.co.demo.modelo.Servicio;
 
-public interface CitaRepository extends MongoRepository<Cita,String>
+public interface CitaRepository extends MongoRepository<Cita,String>  
 {
     //CREATE
     default void insertarCita(Cita cita)
